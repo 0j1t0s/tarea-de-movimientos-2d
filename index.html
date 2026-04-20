@@ -3,91 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <title>Portafolio - Computación Gráfica</title>
+
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             margin: 0;
-            background-color: #f4f6f8;
+            background: linear-gradient(135deg, #eef2f7, #dbe6f6);
         }
 
+        /* HEADER */
         header {
-            background-color: #2c3e50;
+            background: linear-gradient(135deg, #1f2d3d, #34495e);
             color: white;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
 
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+
+        header p {
+            margin-top: 8px;
+            font-size: 1em;
+            opacity: 0.85;
+        }
+
+        /* CONTENIDO */
         main {
-            padding: 30px;
-            max-width: 800px;
-            margin: auto;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
+        /* TARJETA */
         .card {
             background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        h2 {
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .card h2 {
             margin-top: 0;
             color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
+        /* LISTA */
         ul {
             list-style: none;
             padding: 0;
         }
 
         li {
-            margin: 10px 0;
+            margin: 12px 0;
         }
 
         a {
             text-decoration: none;
-            color: #2980b9;
+            color: #2c3e50;
+            background: #f4f6f8;
+            padding: 10px 14px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.2s;
         }
 
         a:hover {
-            text-decoration: underline;
+            background: #3498db;
+            color: white;
         }
 
+        /* FOOTER */
         footer {
-            text-align: center;
-            padding: 15px;
-            background: #2c3e50;
+            background: #1f2d3d;
             color: white;
-            margin-top: 30px;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+
+        .autor {
+            font-weight: bold;
+            color: #00c3ff;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.6em;
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Computación Gráfica</h1>
-    <p>Portafolio de Actividades</p>
+    <h1><i class="fas fa-laptop-code"></i> Computación Gráfica</h1>
+    <p>Portafolio de Actividades Académicas</p>
 </header>
 
 <main>
 
     <div class="card">
-        <h2>Actividad 4</h2>
+        <h2><i class="fas fa-chart-line"></i> Actividad 4</h2>
         <ul>
             <li>
                 <a href="Tareas/Actividad 4/curva dinamica.html" target="_blank">
-                    Curva Dinámica
+                    <i class="fas fa-wave-square"></i> Curva Dinámica
                 </a>
             </li>
             <li>
                 <a href="Tareas/Actividad 4/grafico de barras.html" target="_blank">
-                    Gráfico de Barras
+                    <i class="fas fa-chart-bar"></i> Gráfico de Barras
                 </a>
             </li>
             <li>
                 <a href="Tareas/Actividad 4/grafico de puntos.html" target="_blank">
-                    Gráfico de Puntos
+                    <i class="fas fa-braille"></i> Gráfico de Puntos
                 </a>
             </li>
         </ul>
@@ -97,6 +152,7 @@
 
 <footer>
     <p>Ingeniería de Sistemas - 2026</p>
+    <p>Desarrollado por: <span class="autor">Marco Antonio Salcedo Curi</span></p>
 </footer>
 
 </body>
