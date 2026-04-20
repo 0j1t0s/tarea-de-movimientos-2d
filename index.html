@@ -1,153 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Portafolio - Computación Gráfica</title>
+<meta charset="UTF-8">
+<title>Portafolio - Computación Gráfica</title>
 
-    <!-- ICONOS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- ICONOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            margin: 0;
-            background: linear-gradient(135deg, #eef2f7, #dbe6f6);
-        }
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        /* HEADER */
-        header {
-            background: linear-gradient(135deg, #1f2d3d, #34495e);
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-        }
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+        color: #eee;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
 
+    /* HEADER */
+    header {
+        background: linear-gradient(135deg, #8B0000, #000000);
+        padding: 35px 20px;
+        text-align: center;
+        border-bottom: 2px solid #d4af37;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    }
+
+    header h1 {
+        font-size: 2.4em;
+        color: #d4af37;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    header p {
+        margin-top: 8px;
+        color: #ccc;
+    }
+
+    /* MAIN */
+    main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+    }
+
+    /* CONTENEDOR */
+    .contenedor {
+        width: 100%;
+        max-width: 900px;
+    }
+
+    /* TARJETAS */
+    .card {
+        background: #1c1c1c;
+        border: 1px solid rgba(212,175,55,0.3);
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        border-color: #d4af37;
+    }
+
+    .card h2 {
+        color: #d4af37;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* LISTA */
+    ul {
+        list-style: none;
+    }
+
+    li {
+        margin: 12px 0;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        background: #111;
+        padding: 12px 15px;
+        border-radius: 8px;
+        color: #eee;
+        border: 1px solid rgba(255,255,255,0.08);
+        transition: 0.25s;
+    }
+
+    a:hover {
+        background: linear-gradient(135deg, #8B0000, #000);
+        border-color: #d4af37;
+        color: #d4af37;
+        transform: translateX(5px);
+    }
+
+    /* FOOTER */
+    footer {
+        background: #000;
+        text-align: center;
+        padding: 20px;
+        border-top: 2px solid #8B0000;
+    }
+
+    footer p {
+        margin: 5px 0;
+        color: #bbb;
+        font-size: 0.9em;
+    }
+
+    .autor {
+        color: #d4af37;
+        font-weight: bold;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
         header h1 {
-            margin: 0;
-            font-size: 2.2em;
+            font-size: 1.6em;
         }
-
-        header p {
-            margin-top: 8px;
-            font-size: 1em;
-            opacity: 0.85;
-        }
-
-        /* CONTENIDO */
-        main {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        /* TARJETA */
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-
-        .card h2 {
-            margin-top: 0;
-            color: #2c3e50;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* LISTA */
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            margin: 12px 0;
-        }
-
-        a {
-            text-decoration: none;
-            color: #2c3e50;
-            background: #f4f6f8;
-            padding: 10px 14px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: 0.2s;
-        }
-
-        a:hover {
-            background: #3498db;
-            color: white;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #1f2d3d;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-
-        footer p {
-            margin: 5px 0;
-            font-size: 0.9em;
-        }
-
-        .autor {
-            font-weight: bold;
-            color: #00c3ff;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.6em;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1><i class="fas fa-laptop-code"></i> Computación Gráfica</h1>
+    <h1><i class="fas fa-code"></i> Computación Gráfica</h1>
     <p>Portafolio de Actividades Académicas</p>
 </header>
 
 <main>
+    <div class="contenedor">
 
-    <div class="card">
-        <h2><i class="fas fa-chart-line"></i> Actividad 4</h2>
-        <ul>
-            <li>
-                <a href="Tareas/Actividad 4/curva dinamica.html" target="_blank">
-                    <i class="fas fa-wave-square"></i> Curva Dinámica
-                </a>
-            </li>
-            <li>
-                <a href="Tareas/Actividad 4/grafico de barras.html" target="_blank">
-                    <i class="fas fa-chart-bar"></i> Gráfico de Barras
-                </a>
-            </li>
-            <li>
-                <a href="Tareas/Actividad 4/grafico de puntos.html" target="_blank">
-                    <i class="fas fa-braille"></i> Gráfico de Puntos
-                </a>
-            </li>
-        </ul>
+        <div class="card">
+            <h2><i class="fas fa-chart-line"></i> Actividad 4</h2>
+
+            <ul>
+                <li>
+                    <a href="Tareas/Actividad 4/curva dinamica.html" target="_blank">
+                        <i class="fas fa-wave-square"></i>
+                        Curva Dinámica
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Tareas/Actividad 4/grafico de barras.html" target="_blank">
+                        <i class="fas fa-chart-bar"></i>
+                        Gráfico de Barras
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Tareas/Actividad 4/grafico de puntos.html" target="_blank">
+                        <i class="fas fa-braille"></i>
+                        Gráfico de Puntos
+                    </a>
+                </li>
+            </ul>
+        </div>
+
     </div>
-
 </main>
 
 <footer>
