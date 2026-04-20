@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gráfico de Barras Dinámico</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .contenedor {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 300px;
+      gap: 10px;
+      margin-top: 50px;
+    }
+
+    .barra {
+      width: 50px;
+      background-color: #3498db;
+      transition: height 0.5s;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Gráfico de Barras Dinámico</h1>
+
+  <div class="contenedor" id="grafico">
+    <div class="barra"></div>
+    <div class="barra"></div>
+    <div class="barra"></div>
+    <div class="barra"></div>
+    <div class="barra"></div>
+  </div>
+
+  <script>
+    const barras = document.querySelectorAll(".barra");
+
+    function generarValores() {
+      barras.forEach(barra => {
+        let valor = Math.floor(Math.random() * 91) + 10; // entre 10 y 100
+        barra.style.height = valor * 2 + "px"; // escala visual
+      });
+    }
+
+    // Ejecutar cada segundo
+    setInterval(generarValores, 1000);
+
+    // Ejecutar al inicio
+    generarValores();
+  </script>
+
+</body>
+</html>
